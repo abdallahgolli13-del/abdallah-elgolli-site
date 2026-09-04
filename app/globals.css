@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #f1efe7;
+  --ink: #131313;
+}
+
+@theme inline {
+  --color-cream: #f1efe7;
+  --color-ink: #131313;
+  --font-display: var(--font-jost), "Futura", sans-serif;
+  --font-sans: var(--font-inter), Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-inter), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #131313;
+  color: #f1efe7;
+}
+
+/* ---------- grain texture ---------- */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- marquee ---------- */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* ---------- custom cursor ---------- */
+@media (pointer: fine) {
+  .cursor-dot, .cursor-ring {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    pointer-events: none;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-dot { width: 6px; height: 6px; background: #131313; }
+  .cursor-ring {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(19,19,19,.45);
+    transition: width .25s ease, height .25s ease, border-color .25s ease;
+  }
+  .cursor-ring.is-active {
+    width: 56px; height: 56px;
+    border-color: rgba(19,19,19,.9);
+  }
+}
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ---------- lightbox ---------- */
+.lightbox-img {
+  max-height: 82vh;
+  max-width: 88vw;
+  object-fit: contain;
+}
+
+/* thin elegant scrollbar */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #f1efe7; }
+::-webkit-scrollbar-thumb { background: #c9c5b4; border-radius: 9px; }
+::-webkit-scrollbar-thumb:hover { background: #131313; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
