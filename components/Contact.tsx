@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import Reveal from "./Reveal";
 
 const IG_URL = "https://www.instagram.com/abdallah.elgolli";
-const EMAIL = "abdallah.elgolli.photo@gmail.com"; // ← remplace par ton email
+const EMAIL = "ElGoulliAgency@gmail.com"; // ← remplace par ton email
 const WEB3FORMS_KEY = "VOTRE_CLE_WEB3FORMS"; // ← clé gratuite depuis web3forms.com (voir DEPLOY.md)
 
 export default function Contact() {
