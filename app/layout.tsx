@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://abdallah-elgolli.vercel.app"),
   title: "AbdAllah El Golli — Photographie produit · Parfums & Cosmétiques · Tunis",
   description:
-    "Visuels produit haut de gamme pour marques de beauté, parfums et cosmétiques. Studio créatif à Tunis : photographie assistée par IA, finie à la main. Previews sous 72h, livraison haute définition.",
+    "Visuels produit haut de gamme pour marques de beauté, parfums et cosmétiques. Studio créatif à Tunis : photographie produit, finition à la main. Previews sous 72h, livraison haute définition.",
   keywords: [
     "photographie produit",
     "packshot",

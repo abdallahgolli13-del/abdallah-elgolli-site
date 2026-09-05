@@ -58,7 +58,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.75 }}
             className="mt-6 max-w-md text-[15px] leading-relaxed text-ink/70 md:text-base"
           >
-            Photographie produit assistée par IA, finie à la main. Chaque image
+            Photographie produit, finition à la main. Chaque image
             est construite comme une campagne — lumière, matière, émotion.
           </motion.p>
 

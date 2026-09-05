@@ -43,7 +43,7 @@ export default function About() {
               </p>
               <p>
                 Ma méthode : les fondamentaux de la photographie de studio,
-                amplifiés par un pipeline assisté par IA, <em>fini à la main</em>.
+                une direction artistique exigeante et une finition à la main.
                 Le résultat a le calibre d'une campagne internationale, avec la
                 réactivité et la proximité d'un studio local.
               </p>
