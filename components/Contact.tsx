@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 const IG_URL = "https://www.instagram.com/abdallah.elgolli";
 const EMAIL = "ElGoulliAgency@gmail.com"; // ← remplace par ton email
 const WEB3FORMS_KEY = "2d2d5d89-8281-4de4-a742-24f08fdad664";
-const WHATSAPP_NUMBER = ""; // ← ton numéro au format international sans "+", ex: "21612345678". Laisse vide pour masquer le bouton.
+const WHATSAPP_NUMBER = "21699899920"; // ← ton numéro au format international sans "+", ex: "21612345678". Laisse vide pour masquer le bouton.
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
