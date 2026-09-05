@@ -3,17 +3,6 @@ npm notice run next dev
 ▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.1.224:3000
-✓ Ready in 458ms
-✓ Running next.config.ts took 39ms
+✓ Ready in 1417ms
+✓ Running next.config.ts took 118ms
 
- GET / 200 in 2.5s (next.js: 2.3s, application-code: 181ms)
- GET / 200 in 116ms (next.js: 15ms, application-code: 101ms)
-[browser] Image with src "/logo/aeg-logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[browser] Image with src "/images/jcb-brume-1-full.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[browser] Image with src "/images/jcb-creme-1-full.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
- GET / 200 in 161ms (next.js: 7ms, application-code: 154ms)
-[browser] Image with src "/images/jcb-brume-1-full.webp" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

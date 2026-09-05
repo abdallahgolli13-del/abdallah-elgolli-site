@@ -6,8 +6,9 @@ import Image from "next/image";
 import { scrollToHash } from "./SmoothScroll";
 
 const HERO_IMAGES = [
-  { src: "/images/progenix-1-full.webp", alt: "Sérum ProGénix parmi les fleurs" },
-  { src: "/images/jcb-brume-1-full.webp", alt: "Brume Japanese Cherry Blossom en contre-jour" },
+  { src: "/images/souplesse-design-full.webp", alt: "Affiche éditoriale Souplesse — typographie géante derrière le flacon" },
+  { src: "/images/progenix-2-full.webp", alt: "Sérum ProGénix, compte-gouttes et goutte suspendue" },
+  { src: "/images/jcb-brume-1-full.webp", alt: "Brume Japanese Cherry Blossom en lueur dorée" },
   { src: "/images/jcb-creme-1-full.webp", alt: "Crème corps sur prisme rouge" },
 ];
 

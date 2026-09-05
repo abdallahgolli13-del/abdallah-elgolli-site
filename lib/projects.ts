@@ -1,8 +1,10 @@
-export type Category = "parfum" | "skincare" | "graphique";
+export type Category = "parfum" | "skincare" | "cheveux" | "graphique";
+
+export type ProductId = "progenix" | "jcb-brume" | "jcb-creme" | "souplesse" | "souplesse-design";
 
 export type Work = {
   slug: string;
-  brand: string;
+  product: ProductId;
   title: string;
   category: Category;
   year: string;
@@ -11,146 +13,166 @@ export type Work = {
   alt: string;
 };
 
+export const PRODUCTS: { id: ProductId; name: string; subtitle: string }[] = [
+  { id: "progenix", name: "ProGénix", subtitle: "Sérum contour des yeux — série concept" },
+  { id: "jcb-brume", name: "Japanese Cherry Blossom", subtitle: "Brume parfumée" },
+  { id: "jcb-creme", name: "Japanese Cherry Blossom", subtitle: "Crème corps ultime" },
+  { id: "souplesse", name: "Souplesse", subtitle: "Shampoing Pomme & Raisin" },
+  { id: "souplesse-design", name: "Souplesse", subtitle: "Design graphique — affiche éditoriale" },
+];
+
 export const CATEGORIES: { id: Category | "tout"; label: string }[] = [
   { id: "tout", label: "Tout" },
   { id: "parfum", label: "Parfums" },
   { id: "skincare", label: "Skincare" },
+  { id: "cheveux", label: "Cheveux" },
   { id: "graphique", label: "Graphique" },
 ];
 
 export const WORKS: Work[] = [
-  // — ProGénix —
+  // — ProGénix · sérum contour des yeux (concept) —
   {
-    slug: "progenix-1",
-    brand: "ProGénix",
-    title: "Sérum Anti-Râge",
+    slug: "progenix-portrait",
+    product: "progenix",
+    title: "Le portrait",
     category: "skincare",
     year: "2026",
     thumb: "/images/progenix-1-thumb.webp",
     full: "/images/progenix-1-full.webp",
-    alt: "Sérum ProGénix — portrait studio sur socle sombre.",
+    alt: "Sérum contour des yeux ProGénix, flacon fermé dressé sur un socle sombre dans une lumière violette.",
   },
   {
-    slug: "progenix-2",
-    brand: "ProGénix",
-    title: "Première Goutte",
+    slug: "progenix-suspension",
+    product: "progenix",
+    title: "La suspension",
     category: "skincare",
     year: "2026",
     thumb: "/images/progenix-2-thumb.webp",
     full: "/images/progenix-2-full.webp",
-    alt: "Sérum ProGénix — compte-gouttes soulevé, goutte suspendue.",
+    alt: "Compte-gouttes suspendu au-dessus du flacon ouvert de sérum ProGénix, goutte en formation.",
   },
   {
-    slug: "progenix-3",
-    brand: "ProGénix",
-    title: "Texture & Fil",
+    slug: "progenix-chute",
+    product: "progenix",
+    title: "La chute",
     category: "skincare",
     year: "2026",
     thumb: "/images/progenix-3-thumb.webp",
     full: "/images/progenix-3-full.webp",
-    alt: "Sérum ProGénix — détail du compte-gouttes.",
+    alt: "Compte-gouttes levé au-dessus du sérum ProGénix, une goutte tombe dans une lueur pourpre.",
   },
-  // — Bath & Body Works · Japanese Cherry Blossom Brume —
+  // — JCB · brume parfumée —
   {
-    slug: "jcb-brume-1",
-    brand: "Japanese Cherry Blossom",
-    title: "Le Faisceau",
+    slug: "jcb-brume-lueur",
+    product: "jcb-brume",
+    title: "La lueur",
     category: "parfum",
     year: "2026",
     thumb: "/images/jcb-brume-1-thumb.webp",
     full: "/images/jcb-brume-1-full.webp",
-    alt: "Brume parfumée JCB — contre-jour et rayons dorés.",
+    alt: "Brume parfumée Japanese Cherry Blossom debout sous une branche de cerisier, lueur dorée et pétales en chute.",
   },
   {
-    slug: "jcb-brume-2",
-    brand: "Japanese Cherry Blossom",
-    title: "La Soie",
+    slug: "jcb-brume-crepuscule",
+    product: "jcb-brume",
+    title: "Le crépuscule",
     category: "parfum",
     year: "2026",
     thumb: "/images/jcb-brume-2-thumb.webp",
     full: "/images/jcb-brume-2-full.webp",
-    alt: "Brume parfumée JCB — sur soie et éclats d'or.",
+    alt: "Brume parfumée Japanese Cherry Blossom sur fond bordeaux profond, branche de cerisier en fleurs.",
   },
   {
-    slug: "jcb-brume-3",
-    brand: "Japanese Cherry Blossom",
-    title: "La Lueur",
+    slug: "jcb-brume-soie",
+    product: "jcb-brume",
+    title: "La soie",
     category: "parfum",
     year: "2026",
     thumb: "/images/jcb-brume-3-thumb.webp",
     full: "/images/jcb-brume-3-full.webp",
-    alt: "Brume parfumée JCB — lueur dorée et cerisiers.",
+    alt: "Brume parfumée Japanese Cherry Blossom allongée sur soie ivoire, éclats d'or et bouchon posé à côté.",
   },
-  // — Bath & Body Works · JCB Crème corps —
+  // — JCB · crème corps —
   {
-    slug: "jcb-creme-1",
-    brand: "JCB — Crème corps",
-    title: "Le Joyau",
+    slug: "jcb-creme-joyau",
+    product: "jcb-creme",
+    title: "Le joyau",
     category: "skincare",
     year: "2026",
     thumb: "/images/jcb-creme-1-thumb.webp",
     full: "/images/jcb-creme-1-full.webp",
-    alt: "Crème corps JCB — sur prisme laqué bordeaux.",
+    alt: "Tube de crème corps Japanese Cherry Blossom dressé sur un coin de verre rouge, fond rouge profond.",
   },
   {
-    slug: "jcb-creme-2",
-    brand: "JCB — Crème corps",
-    title: "La Floraison",
+    slug: "jcb-creme-floraison",
+    product: "jcb-creme",
+    title: "La floraison",
     category: "skincare",
     year: "2026",
     thumb: "/images/jcb-creme-2-thumb.webp",
     full: "/images/jcb-creme-2-full.webp",
-    alt: "Crème corps JCB — ambiance bois sombre et cerisiers.",
+    alt: "Tube de crème corps Japanese Cherry Blossom sur bois sombre près d'une branche de cerisier, pétales en chute.",
   },
   {
-    slug: "jcb-creme-3",
-    brand: "JCB — Crème corps",
-    title: "Le Matin",
+    slug: "jcb-creme-matin",
+    product: "jcb-creme",
+    title: "Le matin",
     category: "skincare",
     year: "2026",
     thumb: "/images/jcb-creme-3-thumb.webp",
     full: "/images/jcb-creme-3-full.webp",
-    alt: "Crème corps JCB — soleil matinal sur soie ivoire.",
+    alt: "Tube de crème corps Japanese Cherry Blossom allongé sur soie ivoire avec éclats d'or au soleil chaud.",
   },
-  // — Souplesse Shampoo —
+  // — Souplesse · shampoing —
   {
-    slug: "souplesse-1",
-    brand: "Souplesse",
-    title: "Pomme & Raisin — Studio",
-    category: "skincare",
+    slug: "souplesse-verger",
+    product: "souplesse",
+    title: "Au verger",
+    category: "cheveux",
     year: "2026",
     thumb: "/images/souplesse-1-thumb.webp",
     full: "/images/souplesse-1-full.webp",
-    alt: "Shampooing Souplesse — flacon vert sur podium.",
+    alt: "Shampoing Souplesse Effet Fortifiant dressé au milieu de pommes vertes et de raisins.",
   },
   {
-    slug: "souplesse-2",
-    brand: "Souplesse",
-    title: "Effet Fortifiant",
-    category: "skincare",
+    slug: "souplesse-recolte",
+    product: "souplesse",
+    title: "La récolte",
+    category: "cheveux",
     year: "2026",
     thumb: "/images/souplesse-2-thumb.webp",
     full: "/images/souplesse-2-full.webp",
-    alt: "Shampooing Souplesse — vue rapprochée étiquette.",
+    alt: "Flacon de shampoing Souplesse serré parmi de grosses pommes vertes couvertes de gouttes d'eau.",
   },
   {
-    slug: "souplesse-3",
-    brand: "Souplesse",
-    title: "Campagne Éditoriale",
-    category: "skincare",
+    slug: "souplesse-podium",
+    product: "souplesse",
+    title: "Le podium",
+    category: "cheveux",
     year: "2026",
     thumb: "/images/souplesse-3-thumb.webp",
     full: "/images/souplesse-3-full.webp",
-    alt: "Shampooing Souplesse — visuel nettoyé.",
+    alt: "Shampoing Souplesse sur un podium gris en coin, fond vert d'eau studio.",
   },
   {
-    slug: "souplesse-4",
-    brand: "Souplesse",
-    title: "Pureté Végétale",
-    category: "skincare",
+    slug: "souplesse-mousse",
+    product: "souplesse",
+    title: "La mousse",
+    category: "cheveux",
     year: "2026",
     thumb: "/images/souplesse-4-thumb.webp",
     full: "/images/souplesse-4-full.webp",
-    alt: "Shampooing Souplesse — angle de vue dynamique.",
+    alt: "Flacon de shampoing Souplesse entouré d'une mousse blanche onctueuse et de bulles.",
+  },
+  // — Souplesse · design graphique —
+  {
+    slug: "souplesse-affiche",
+    product: "souplesse-design",
+    title: "L'affiche",
+    category: "graphique",
+    year: "2026",
+    thumb: "/images/souplesse-design-thumb.webp",
+    full: "/images/souplesse-design-full.webp",
+    alt: "Affiche éditoriale : typographie géante « Souplesse » derrière le flacon, accroche Pomme & Raisin sur socle sombre.",
   },
 ];

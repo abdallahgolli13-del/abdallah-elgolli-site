@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { scrollToHash } from "./SmoothScroll";
 
 const LINKS = [
@@ -39,9 +38,10 @@ export default function Nav() {
           href="#top"
           onClick={(e) => go(e, "#top")}
           aria-label="Retour en haut"
-          className="relative block h-11 w-[86px] transition-transform duration-300 hover:scale-[1.04] md:h-12 md:w-[94px]"
+          className="block transition-transform duration-300 hover:scale-[1.04]"
         >
-          <Image src="/logo/aeg-logo.png" alt="AbdAllah El Golli Photography" fill className="object-contain" priority />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo/aeg-logo.png" alt="AbdAllah El Golli Photography" className="h-12 w-auto md:h-14" />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">

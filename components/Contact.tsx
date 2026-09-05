@@ -6,6 +6,7 @@ import Reveal from "./Reveal";
 const IG_URL = "https://www.instagram.com/abdallah.elgolli";
 const EMAIL = "ElGoulliAgency@gmail.com"; // ← remplace par ton email
 const WEB3FORMS_KEY = "VOTRE_CLE_WEB3FORMS"; // ← clé gratuite depuis web3forms.com (voir DEPLOY.md)
+const WHATSAPP_NUMBER = ""; // ← ton numéro au format international sans "+", ex: "21612345678". Laisse vide pour masquer le bouton.
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error" | "nokey">("idle");
@@ -86,6 +87,27 @@ export default function Contact() {
                   <span className="block font-display text-lg font-medium">@abdallah.elgolli</span>
                 </span>
               </a>
+
+              {WHATSAPP_NUMBER && (
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-2xl border border-ink/15 p-4 transition-colors duration-300 hover:border-ink"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1fAe54] text-white transition-transform duration-300 group-hover:scale-110">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.5-.6c.1-.2.1-.4 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.4-.3Z" />
+                    </svg>
+                  </span>
+                  <span>
+                    <span className="block font-display text-[11px] font-medium uppercase tracking-[0.22em] text-ink/50">
+                      WhatsApp
+                    </span>
+                    <span className="block font-display text-lg font-medium">Réponse rapide</span>
+                  </span>
+                </a>
+              )}
 
               <a
                 href={`mailto:${EMAIL}`}
