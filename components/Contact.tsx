@@ -9,17 +9,13 @@ const WEB3FORMS_KEY = "2d2d5d89-8281-4de4-a742-24f08fdad664";
 const WHATSAPP_NUMBER = ""; // ← ton numéro au format international sans "+", ex: "21612345678". Laisse vide pour masquer le bouton.
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error" | "nokey">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    if (WEB3FORMS_KEY === "VOTRE_CLE_WEB3FORMS") {
-      setStatus("nokey");
-      return;
-    }
     setStatus("sending");
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -161,12 +157,6 @@ export default function Contact() {
             {status === "error" && (
               <p className="rounded-xl border border-red-900/30 px-4 py-3 text-center text-sm text-red-900">
                 Une erreur est survenue — réessayez ou passez par Instagram.
-              </p>
-            )}
-            {status === "nokey" && (
-              <p className="rounded-xl border border-amber-700/40 bg-amber-100/60 px-4 py-3 text-center text-sm text-amber-900">
-                Formulaire pas encore activé (clé Web3Forms à configurer — voir DEPLOY.md).
-                En attendant : Instagram ou email ✦
               </p>
             )}
           </form>
