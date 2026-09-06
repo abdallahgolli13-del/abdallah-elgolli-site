@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Jost, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="grain min-h-full flex flex-col">
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
