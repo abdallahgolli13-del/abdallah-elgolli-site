@@ -6,6 +6,7 @@ import { scrollToHash } from "./SmoothScroll";
 
 type Pack = {
   name: string;
+  price: string;
   tagline: string;
   items: string[];
   featured?: boolean;
@@ -14,6 +15,7 @@ type Pack = {
 const PACKS: Pack[] = [
   {
     name: "Découverte",
+    price: "180 DT",
     tagline: "Pour tester la différence sur 2 produits",
     items: [
       "2 produits mis en scène",
@@ -25,6 +27,7 @@ const PACKS: Pack[] = [
   },
   {
     name: "Collection",
+    price: "290 DT",
     tagline: "Le best-seller — votre ligne complète",
     featured: true,
     items: [
@@ -38,6 +41,7 @@ const PACKS: Pack[] = [
   },
   {
     name: "Studio",
+    price: "520 DT",
     tagline: "Pour une campagne ou un restockage complet",
     items: [
       "7 produits + 2 produits OFFERTS",
@@ -69,7 +73,7 @@ export default function Packs() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-cream/60">
             Chaque pack est un projet clé en main : direction artistique,
-            production, retouches et livraison. Tarifs sur demande.
+            production, retouches et livraison. Tarifs transparents tout compris.
           </p>
         </Reveal>
 
@@ -90,7 +94,10 @@ export default function Packs() {
                     Le plus choisi
                   </span>
                 )}
-                <h3 className="font-display text-2xl font-semibold tracking-tight">{p.name}</h3>
+                <div className="flex items-baseline justify-between">
+                  <h3 className="font-display text-2xl font-semibold tracking-tight">{p.name}</h3>
+                  <span className="font-display text-2xl font-semibold tracking-tight">{p.price}</span>
+                </div>
                 <p className={`mt-1.5 text-sm ${p.featured ? "text-ink/60" : "text-cream/55"}`}>
                   {p.tagline}
                 </p>
